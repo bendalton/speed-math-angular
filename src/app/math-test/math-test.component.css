@@ -1,0 +1,31 @@
+.card {
+min-height:500px;
+margin-top:10px;
+}
+.number {
+font-family: 'Courier New', Courier, monospace;
+font-weight:bold;
+font-size:180%
+}
+.solution {
+border-top: 1px solid #000;
+}
+.number.correct {
+color:#339933;
+}
+.menu h2 {
+color: #993333
+}
+.menu hr {
+margin-bottom:40px;
+}
+.menu h5 {
+color: #888;
+margin-bottom:25px;
+}
+
+.menu .btn {
+font-size:150%;
+font-weight: bold;
+margin-bottom:20px;
+}
