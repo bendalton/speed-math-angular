@@ -24,13 +24,16 @@ export class MathTestComponent {
       setTimeout(()=>{
       document.getElementById("solutionInput").focus()
       },10)
-    },500)
+    },700)
     this.currentAnswer = null
   }
 
   public startTest(test:MathTest){
     this.currentTest = new MathTest(test.secondsTotal,test.title);
     this.currentTest.start()
+    setInterval(()=>{
+    window.scrollTo({top:0})
+    },100)
   }
 
   public showMenu(){

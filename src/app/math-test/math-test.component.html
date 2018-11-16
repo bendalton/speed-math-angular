@@ -19,7 +19,7 @@
       <h5>Caleb, choose your race:</h5>
       <button *ngFor="let test of availableTests" class="btn btn-block btn-success" (click)="startTest(test)">{{test.title}}</button>
     </div>
-    <div *ngIf="currentTest && currentTest.isRunning" class="col-4 offset-4 text-right">
+    <div *ngIf="currentTest && currentTest.isRunning" class="col-6 offset-3 text-right">
       <div class="number">{{currentTest.currentQuestion.numberTop}}</div>
       <div class="number"><span>{{currentTest.currentQuestion.operator}}</span> {{currentTest.currentQuestion.numberBottom}}</div>
       <div class="number correct answer-placeholder"  *ngIf="!currentTest.currentQuestion.answered"></div>
@@ -38,7 +38,7 @@
           [(ngModel)]="currentAnswer"  
           (keyup.enter)="answerQuestion(currentAnswer)">
       </div>
-    <div  *ngIf="currentTest && !currentTest.isRunning" class="col-4 offset-4 text-center">
+    <div  *ngIf="currentTest && !currentTest.isRunning" class="col-6 offset-3 text-center">
       <h3><span class="number correct">{{currentTest.questionsCorrect}}</span></h3>
       <h5>in {{currentTest.secondsTotal}} seconds</h5>
     </div>  
