@@ -29,6 +29,7 @@ export class MathTestComponent {
   }
 
   public startTest(test:MathTest){
+    this.currentAnswer = null
     this.currentTest = new MathTest(test.secondsTotal,test.title);
     this.currentTest.start()
     setInterval(()=>{
