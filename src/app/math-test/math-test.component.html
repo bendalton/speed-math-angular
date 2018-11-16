@@ -1,13 +1,15 @@
 <div class="card">
-  <div class="card-header row" *ngIf="currentTest">
-    <div class="col-4 text-left">
-    <button (click)="showMenu()" class="btn btn-danger">Start Over</button> 
-    </div>
-    <div class="col-4 large number text-center">
-    {{currentTest.secondsRemaining}}s
-    </div>
-    <div class="col-4 large number correct text-center">
-    {{currentTest.questionsCorrect}}
+  <div class="card-header" *ngIf="currentTest">
+    <div class="row">
+      <div class="col-4 text-left">
+      <button (click)="showMenu()" class="btn btn-danger">Start Over</button> 
+      </div>
+      <div class="col-4 large number text-center">
+      {{currentTest.secondsRemaining}}s
+      </div>
+      <div class="col-4 large number correct text-center">
+      {{currentTest.questionsCorrect}}
+      </div>
     </div>
   </div>
   <div class="card-body">
@@ -17,11 +19,17 @@
       <h5>Caleb, choose your race:</h5>
       <button *ngFor="let test of availableTests" class="btn btn-block btn-success" (click)="startTest(test)">{{test.title}}</button>
     </div>
-    <div  *ngIf="currentTest && currentTest.isRunning" class="col-4 offset-4 text-right">
+    <div *ngIf="currentTest && currentTest.isRunning" class="col-4 offset-4 text-right">
       <div class="number">{{currentTest.currentQuestion.numberTop}}</div>
       <div class="number"><span>{{currentTest.currentQuestion.operator}}</span> {{currentTest.currentQuestion.numberBottom}}</div>
-      <div class="number solution" *ngIf="!currentTest.currentQuestion.answered">
-        <input 
+      <div class="number correct answer-placeholder"  *ngIf="!currentTest.currentQuestion.answered"></div>
+      <div class="number correct answer-holder"  *ngIf="currentTest.currentQuestion.answered">
+        <span *ngIf="currentTest.currentQuestion.answered && currentTest.currentQuestion.answeredCorrectly">✅</span> {{currentTest.currentQuestion.correctSolution}}
+      </div>
+    </div>
+    <div>
+     <input 
+          *ngIf="currentTest && currentTest.isRunning" 
           id="solutionInput"
           class="form-control"
           type="number" 
@@ -30,10 +38,6 @@
           [(ngModel)]="currentAnswer"  
           (keyup.enter)="answerQuestion(currentAnswer)">
       </div>
-      <div class="number correct"  *ngIf="currentTest.currentQuestion.answered">
-        <span *ngIf="currentTest.currentQuestion.answeredCorrectly">✅</span> {{currentTest.currentQuestion.correctSolution}}
-      </div>
-    </div>
     <div  *ngIf="currentTest && !currentTest.isRunning" class="col-4 offset-4 text-center">
       <h3><span class="number correct">{{currentTest.questionsCorrect}}</span></h3>
       <h5>in {{currentTest.secondsTotal}} seconds</h5>
