@@ -24,7 +24,7 @@ export class MathTestComponent {
       setTimeout(()=>{
       document.getElementById("solutionInput").focus()
       },10)
-    },1000)
+    },500)
     this.currentAnswer = null
   }
 
