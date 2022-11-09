@@ -10,7 +10,7 @@
     "@angular-devkit/core" "0.7.5"
     rxjs "^6.0.0"
 
-"@angular-devkit/build-angular@~0.7.0":
+"@angular-devkit/build-angular@~0.7.5":
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-angular/-/build-angular-0.7.5.tgz#1ae50c1c57e10919fc631da462037e63e19ea543"
   integrity sha512-FYd2RigCbvm1i0aM1p+jO2145qm56iPgcW2TK3LBxllWFoz5v+wb086/aDzATG+2ETDZO1uENiVTWu5RSkYcSw==
